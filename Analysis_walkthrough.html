@@ -188,13 +188,13 @@ AD_Up2 = "CACTCCGTTCGTCACTCAATAA"
 <p>After modifying param.py, you can begin read alignment and counting using the code below. First you need to generate the reference files by running the code below while within 08_bfg_y2h. This failed for me until I installed argparse on my user account in guru. If you get an error pertaining to argparse fix it like so: 
 pip install --user argparse. I had to modify main.py to not isolate group identities from file name, but instead I just put both AD and DB as G1 for group1 arbitrarily.</p>
 <pre>
-	/home/rothlab/rli/py/bin/python2.7 ./src/main.py --pfasta /home/rothlab/hmount/02/dev/08_bfg_y2h/ref
+	/home/rothlab/rli/py/bin/python2.7 ./src/main.py --pfasta /home/rothlab/hmount/02_dev/08_bfg_y2h/ref
 </pre>
 
 <p>This code aborts after the reference files are made and will throw an error because fastq files havent been supplied yet. Make sure the ref file you generate roughly resembles that in my github with the same series of AD and DB files. Once these files are created the alignment and counting code can be run. Sge.sh uses sge_sub.sh to run the main.py script.
   </br>
   <pre>
-  	./sge.sh -f /home/rothlab/hmount/01_ngsdata/181219_fastq/LP/ -o /home/rothlab/hmount/02_dev/08_bfg_y2H/test
+  	./sge.sh -f /home/rothlab/hmount/01_ngsdata/181219_fastq/LP/ -o /home/rothlab/hmount/02_dev/08_bfg_y2h/test
   </pre>
 
   <p>Once this code finishes running you will be left with a directory that contains the following files for each pair of fastq files. For me it was two directories, one for plus his, one for minus.</p>
